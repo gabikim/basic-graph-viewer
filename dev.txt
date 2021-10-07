@@ -1,0 +1,7 @@
+# Dev specific requirements
+pytest
+pylint
+black
+mypy
+isort
+pytest-cov
