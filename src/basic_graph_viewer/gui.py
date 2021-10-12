@@ -120,7 +120,7 @@ class GUI(tk.Frame):
         button = tk.Button(self.master, text=text, command=callback, bg="blue")
         button.grid(column=col, row=row)
 
-    def update_A(self):
+    def update_A(self, _e=None):
         "Validates and updates A. Displays error message if incorrect."
         if self.curr_function.update_A(tools.str_to_float(self.A_var.get())):
             self.update_plot()
@@ -131,7 +131,7 @@ class GUI(tk.Frame):
             )
             self.A_var.set(self.curr_function.A)
 
-    def update_B(self):
+    def update_B(self, _e=None):
         "Validates and updates B. Displays error message if incorrect."
         if self.curr_function.update_B(tools.str_to_float(self.B_var.get())):
             self.update_plot()
@@ -142,7 +142,7 @@ class GUI(tk.Frame):
             )
             self.B_var.set(self.curr_function.B)
 
-    def update_x_low(self):
+    def update_x_low(self, _e=None):
         "Validates and updates x lower. Displays error message if incorrect."
         if self.curr_function.update_x_lower(tools.str_to_float(self.xlow_var.get())):
             self.update_plot()
@@ -152,7 +152,7 @@ class GUI(tk.Frame):
             )
             self.xlow_var.set(self.curr_function.x_lower)
 
-    def update_x_up(self):
+    def update_x_up(self, _e=None):
         "Validates and updates x upper. Displays error message if incorrect."
         if self.curr_function.update_x_upper(tools.str_to_float(self.xup_var.get())):
             self.update_plot()

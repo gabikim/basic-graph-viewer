@@ -8,7 +8,7 @@ setup(
     description="Allows users to plot functions.",
     author="Gabrielle Kim",
     author_email="gabriellelindakim@gmail.com",
-    python_requires=">=3.7.9",
+    python_requires=">=3.7.3",
     package_dir={"": "src"},
     packages=["basic_graph_viewer", "basic_graph_viewer.fx"],
     install_requires=["numpy", "matplotlib"],

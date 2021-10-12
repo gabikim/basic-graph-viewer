@@ -1,11 +1,15 @@
 # basic-graph-viewer
-Allows users to plot functions f(x) with two user-adjustable parameters A and B.
+Allows users to plot functions f(x) with two user-adjustable parameters A and B. Note this program requires >= python 3.7.3.
 
 ## Installation:
 `pip3 install -U .`
 
 ## To run the graph viewer:
 `python3 -m basic_graph_viewer`
+
+## Instructions
+1. Choose a function from the blue dropdown menu
+2. Adjust parameters A, B, x lower, x upper by entering the value into the box and pressing the enter key or pressing the button to the right.
 
 ## Dev Tools
 ### Install:
