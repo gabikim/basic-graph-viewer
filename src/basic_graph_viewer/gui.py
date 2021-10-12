@@ -100,7 +100,7 @@ class GUI(tk.Frame):
         label.grid(column=col, row=row)
         return label
 
-    def create_entry(self, default: float, validate_cmd, callback, col: int, row: int):
+    def create_entry(self, default, validate_cmd, callback, col: int, row: int):
         "Creates entry widget. Returns variable."
         entry_var = tk.StringVar(self.master)
         entry_var.set(default)
@@ -188,7 +188,13 @@ class GUI(tk.Frame):
         self.canvas.draw()
 
 
-if __name__ == "__main__":
+def run_gui():
+    "Runs GUI and returns the app."
     root = tk.Tk()
     app = GUI(master=root)
     app.mainloop()
+    return app
+
+
+if __name__ == "__main__":
+    run_gui()
