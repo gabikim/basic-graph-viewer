@@ -19,7 +19,7 @@ class Function:
     B: float = 0  # Default user adjustable param
     x_lower: float = 0  # Default x lower limit
     x_upper: float = 10  # Default x upper limit
-    x_points: int = 1000  # Granularity --num of points to plot
+    x_points: int = 10000  # Granularity --num of points to plot
 
     @property
     def description_A(self) -> str:

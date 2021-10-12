@@ -39,3 +39,7 @@ In `src/basic_graph_viewer/fx/functions.py`, add a class that inherits from `Fun
 
 To implement time-variant systems, or to simplify, override the property `y_vect` and do not implement `gen_y_point`. 
 See `src/basic_graph_viewer/fx/baseclass` for the entire `Function` baseclass.
+
+### TODO
+- Aliasing in periodic functions if x range is too big or frequency too high. Should update the `update_x_lower` and `update_x_upper` to also update `x_points`, ie. the number of samples or sample frequency.
+- Make an example `Function` class of how to override the property `y_vect`
