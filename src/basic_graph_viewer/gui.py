@@ -21,7 +21,7 @@ class GUI(tk.Frame):
         self.functions = tools.get_subclasses(fx.Function)
         self.master = master
         self.grid()
-        self.create_dropdown()
+        self.dropdown_var = self.create_dropdown()
         self.curr_function = self.functions[self.dropdown_var.get()]()
         self.function_label = self.create_label(self.curr_function, 0, 0)
         self.A_var, self.A_label = self.create_widget_set(
@@ -82,17 +82,18 @@ class GUI(tk.Frame):
         return var, label
 
     def create_dropdown(self):
-        "Creates the functions option menu"
-        self.dropdown_var = tk.StringVar(self.master)
-        self.dropdown_var.set(list(self.functions.keys())[0])
+        "Creates the functions option menu. returns the dropdown var."
+        dropdown_var = tk.StringVar(self.master)
+        dropdown_var.set(list(self.functions.keys())[0])
         menu = tk.OptionMenu(
             self.master,
-            self.dropdown_var,
+            dropdown_var,
             *list(self.functions.keys()),
             command=self.update_function
         )
         menu.grid(column=1, row=0)
         menu.config(bg="blue")
+        return dropdown_var
 
     def create_label(self, text: str, col: int, row: int):
         "Creates a label. Returns label widget."

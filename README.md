@@ -42,4 +42,5 @@ See `src/basic_graph_viewer/fx/baseclass` for the entire `Function` baseclass.
 
 ### TODO
 - Aliasing in periodic functions if x range is too big or frequency too high. Should update the `update_x_lower` and `update_x_upper` to also update `x_points`, ie. the number of samples or sample frequency.
-- Make an example `Function` class of how to override the property `y_vect`
+- Make an example `Function` class of how to override the property `y_vect`.
+- Add more tests in `tests/test_gui.py` to test gui more robustly.

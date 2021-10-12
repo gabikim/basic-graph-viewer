@@ -5,3 +5,4 @@ black
 mypy
 isort
 pytest-cov
+pytest-mock

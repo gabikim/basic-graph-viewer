@@ -22,7 +22,7 @@ def test_default_values():
     assert func.B == 0
     assert func.x_lower == 0
     assert func.x_upper == 10
-    assert func.x_points == 1000
+    assert func.x_points == 10000
 
 
 def test_description_A_not_implemented():
