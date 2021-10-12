@@ -4,7 +4,9 @@
 Base class for f(x).
 """
 
+import traceback
 import typing
+
 import numpy as np
 
 
@@ -53,13 +55,14 @@ class Function:
         try:
             return self.gen_y_point(x_val)
         except Exception:
+            print(traceback.format_exc())
             return np.NaN
 
+    @property
     def y_vect(self):
         "Returns y-vector"
-        func = lambda x: self._gen_y_point(x)
-        y_vect = func(self.x_vect)
-        return y_vect
+        y = np.array([self._gen_y_point(x) for x in self.x_vect])
+        return y
 
     @property
     def x_vect(self):
@@ -70,27 +73,27 @@ class Function:
     def update_A(self, new_value: float) -> bool:
         "Updates A. Returns True if successful, False otherwise."
         if isinstance(new_value, float) and self.check_valid_A():
-            return False
-        self.A = new_value
-        return True
+            self.A = new_value
+            return True
+        return False
 
     def update_B(self, new_value: float) -> bool:
         "Updates B. Returns True if successful, False otherwise."
         if isinstance(new_value, float) and self.check_valid_B():
-            return False
-        self.B = new_value
-        return True
+            self.B = new_value
+            return True
+        return False
 
     def update_x_lower(self, new_value):
         "Updates x lower limit. Returns True if successful, False otherwise."
-        if new_value < self.x_upper:
+        if isinstance(new_value, float) and new_value < self.x_upper:
             self.x_lower = new_value
             return True
         return False
 
     def update_x_upper(self, new_value):
         "Updates x upper limit. Returns True if successful, False otherwise."
-        if new_value > self.x_lower:
+        if isinstance(new_value, float) and new_value > self.x_lower:
             self.x_upper = new_value
             return True
         return False
