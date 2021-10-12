@@ -4,9 +4,10 @@
 Tests the function baseclass
 """
 
-import pytest
 import numpy as np
-from basic_graph_viewer.fx.baseclass import Function
+import pytest
+
+from basic_graph_viewer.fx import Function
 
 
 class TestClass(Function):
@@ -86,5 +87,5 @@ def test_x_vector():
 def test_y_vect():
     "Tests the y-vector generation"
     func = TestClass()
-    y_vect = func.y_vect()
+    y_vect = func.y_vect
     assert len(y_vect) == func.x_points
