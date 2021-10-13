@@ -1,5 +1,5 @@
 # basic-graph-viewer
-Allows users to plot functions f(x) with two user-adjustable parameters A and B. Note this program requires >= python 3.7.3.
+Allows users to plot functions f(x) with two user-adjustable parameters A and B. Note this program requires >= python 3.7 which should include the tkinter library which is used for the GUI.
 
 ## Installation:
 `pip3 install -U .`
